@@ -1,2 +1,2 @@
-# modalSat
-Automated generation of models in modal logic
+# ModalSat
+Automated generation of models in Modal Logic

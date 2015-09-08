@@ -1,6 +1,5 @@
 #include "../header/formula.h"
 
-
 void formula_init(formula *f)
 {
 	f->size = 0;
@@ -29,3 +28,38 @@ void formula_pop(formula *f)
 	else
 		f->size--;
 }
+
+void insert_formula(char c, formula *f)
+{
+	item_f item;
+	switch(type_of_data(c))
+	{
+		case PROP_ATOMIC:
+			item.type = 0;
+			item.prop.name = c;
+			break;
+		case OPERANDO:
+			item.type = 1;
+			item.op.type = type_operador(c);
+			break;
+		case PARENTHESIS:
+			break;
+		default:
+			print(ERRO_INPUT_FILE);
+			break;
+	}
+
+	formula_push(f, item);
+}
+
+int type_of_data(char c)
+{
+	return 0;
+}
+
+int type_operador(char c)
+{
+	return 0;
+}
+
+

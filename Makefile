@@ -2,7 +2,7 @@ all: modal
 
 F = -g -Wall
 
-modal: main.o io.o model.o
+modal: main.o io.o model.o sat.o formula.o
 	gcc main.o io.o model.o $F -o modal
 
 main.o: src/main.c
@@ -13,6 +13,12 @@ io.o: src/io.c header/io.h
 
 model.o: src/model.c header/model.h
 	gcc src/model.c $F -c
+
+sat.o: src/sat.c header/sat.h
+	gcc src/sat.c $F -c
+
+formula.o: src/formula.c header/formula.h
+	gcc src/formula.c $F -c
 
 clear:
 	rm *.o

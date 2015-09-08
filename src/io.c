@@ -4,6 +4,7 @@ void read_file(char * input)
 {
 	FILE *f_in;
 	f_in = fopen(input, "r");
+	formula *form;
 	
 	if(f_in == NULL)
 	{

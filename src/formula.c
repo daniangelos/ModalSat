@@ -40,7 +40,7 @@ void insert_formula(char c, formula *f)
 			break;
 		case OPERANDO:
 			item.type = 1;
-			item.op.type = type_operador(c);
+			item.op.type = is_operator(&c);
 			break;
 		case PARENTHESIS:
 			break;
@@ -57,9 +57,47 @@ int type_of_data(char c)
 	return 0;
 }
 
-int type_operador(char c)
+int is_operator(char *c)
+{
+	switch (*c)
+	{
+		case '~':
+			return NOT;
+			break;
+		case '&':
+			return AND;
+			break;
+		case '|':
+			return OR;
+			break;
+		case '>':
+			return IMPLY;
+			break;
+		default:
+			return -1;
+			break;
+	}
+}
+
+int is_unario(char c)
+{
+	switch (c)
+	{
+		case '~':
+			return NOT;
+			break;
+		case '[':
+			return NECESS;
+			break;
+		case '<':
+			return POSSIB;
+			break;
+		default:
+			return -1;
+	}
+}
+
+int doesnt_make_sense(char *c)
 {
 	return 0;
 }
-
-

@@ -38,6 +38,8 @@ void formula_push(formula *f, item_f d);
 void formula_pop(formula *f);
 void insert_formula(char c, formula *f);
 int type_of_data(char c);
-int type_operador(char c);
+int is_operator(char *c);
+int is_unario(char c);
+int doesnt_make_sense(char *c);
 
 #endif //FORMULA_H

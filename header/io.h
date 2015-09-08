@@ -4,6 +4,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<ctype.h>
 
 #include "formula.h"
 
@@ -17,5 +18,6 @@
 void read_file(char * input);
 void newline();
 void print(char *c);
+void read_symbol(char *c);
 
 #endif /* IO_H */
